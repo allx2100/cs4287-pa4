@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db
+  namespace: team12
+spec:
+  selector:
+    matchLabels:
+      app: c3m
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: c3m
+    spec:
+      containers:
+      - name: db
+        image: 192.168.1.208:5000/team12/db
+        ports:
+        - containerPort: 27017

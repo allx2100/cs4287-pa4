@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: db-consumer-service
+spec:
+  selector:
+    app: db-consumer 
+  ports:
+    - protocol: TCP
+      port: 9092      
+      targetPort: 9092  
+  type: ClusterIP

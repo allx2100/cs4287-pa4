@@ -1,0 +1,15 @@
+kafka:
+  podDisruptionBudget:
+    enabled: false
+  replicaCount: 1
+  configurationOverrides:
+    auto.create.topics.enable: "true"
+configurationOverrides:
+    listeners: PLAINTEXT://:9092
+    listener.security.protocol.map: PLAINTEXT:PLAINTEXT
+    inter.broker.listener.name: PLAINTEXT
+    
+zookeeper:
+  replicaCount: 1
+  
+

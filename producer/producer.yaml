@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: producer
+  namespace: team12
+spec:
+  replicas: 5 # Can be varied
+  selector:
+    matchLabels:
+      app: producer
+  template:
+    metadata:
+      labels:
+        app: producer
+    spec:
+      containers:
+        - name: producer-container
+          image: docker.io/allx2100/producer # Used personal docker hub account since registries were full
+      hostNetwork: true
+      dnsPolicy: ClusterFirstWithHostNet

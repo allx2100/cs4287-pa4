@@ -1,0 +1,13 @@
+helm install kafka bitnami/kafka \
+  --namespace team12 \
+  --set kafka.replicaCount=1 \
+  --set zookeeper.enabled=true \
+  --set kafka.mode=zookeeper \
+  --set kraft.enabled=false \
+  --set controller.enabled=false \
+  --set controller.replicaCount=0 \
+  --set broker.replicaCount=1 \
+  --set zookeeper.persistence.enabled=false \
+  --set broker.persistence.enabled=false \
+  --set listeners.client.protocol="PLAINTEXT" \
+  -f values.yaml

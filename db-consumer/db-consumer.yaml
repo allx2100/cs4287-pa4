@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: db-consumer
+  namespace: team12
+spec:
+  selector:
+    matchLabels:
+      app: db-consumer 
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: db-consumer 
+    spec:
+      containers:
+      - name: db-consumer
+        image: 192.168.1.208:5000/team12/db-consumer
+        ports:
+        - containerPort: 9092

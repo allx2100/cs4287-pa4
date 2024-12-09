@@ -1,0 +1,6 @@
+kafka-python==2.0.2
+numpy==2.1.2
+scipy==1.14.1
+sympy==1.13.3
+torch==2.4.1
+pymongo==4.10.1
